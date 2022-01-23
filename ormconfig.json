@@ -1,0 +1,10 @@
+{
+  "type": "mysql",
+  "host": "85.95.237.110",
+  "port": 3306,
+  "username": "egitimbu_video",
+  "password": "sR}QLdp,G!c0",
+  "database": "egitimbu_video",
+  "entities": ["src/**/**.entity{.ts,.js}"],
+  "synchronize": true
+}
