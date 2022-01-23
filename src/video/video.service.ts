@@ -79,6 +79,13 @@ export class VideoService {
     return {video};
   }
 
+  async updateJob(id: string, videoData: any): Promise<VideoRO> {
+    let toUpdate = await this.videoRepository.findOne({jobId:id});
+    let updated = Object.assign(toUpdate, videoData);
+    const video = await this.videoRepository.save(updated);
+    return {video};
+  }
+
   async delete(id: string): Promise<DeleteResult> {
     return await this.videoRepository.delete(id);
   }
