@@ -69,17 +69,17 @@ async getJobResult(@Res() response: Response, @Param('id') id: string) {
   @ApiOperation({ summary: 'Update video' })
   @ApiResponse({ status: 201, description: 'The video has been successfully updated.'})
   @ApiResponse({ status: 403, description: 'Forbidden.' })
-  @Put(':slug')
+  @Put(':id')
   async update(@Param() params, @Body('video') videoData: CreateVideoDto) {
     // Todo: update slug also when title gets changed
-    return await this.videoService.update(params.slug, videoData);
+    return await this.videoService.update(params.id, videoData);
   }
 
   @ApiOperation({ summary: 'Delete video' })
   @ApiResponse({ status: 201, description: 'The video has been successfully deleted.'})
   @ApiResponse({ status: 403, description: 'Forbidden.' })
-  @Delete(':slug')
+  @Delete(':id')
   async delete(@Param() params) {
-    return this.videoService.delete(params.slug);
+    return this.videoService.delete(params.id);
   }
 }

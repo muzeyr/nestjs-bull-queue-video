@@ -8,8 +8,6 @@ import { Queue } from 'bull';
 import { InjectQueue } from '@nestjs/bull';
 import {VideoRO, VideosRO, CommentsRO} from './video.interface';
 
-const slug = require('slug');
-
 @Injectable()
 export class VideoService {
   constructor(
